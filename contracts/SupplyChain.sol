@@ -54,13 +54,13 @@ contract SupplyChain {
     _;
   }
 
-  modifier verifyCaller (address _address) { 
+  modifier verifyCaller(address _address) { 
     require (msg.sender == _address); 
     _;
   }
 
   modifier paidEnough(uint _price) { 
-    require(msg.value >= _price); 
+    assert(msg.value >= _price);
     _;
   }
 
